@@ -11,8 +11,7 @@
     e.g.: you set the box-sizing to content-box, but Padding is only squzzing the box-content. 
     `{Padding: 20px; width:100px; height: 100px;}`
     this is a content-box, with fixed W and H ,but You set Paddings, it will squzze the content,content Is Fixed, it will not yield, so then, it will expand padding Width with 20px on its Four side, then you got visible box with 140x140px, but content is still 100x100, the expanded part is Padding.
-
-    solution: 
+     
     set the box-sizing Attr to `border-box`,because this allows content to be squzzed by Padding, with changable content. So if you set Padding again, it's visible box still 100x100px
 
 2、why give `<Body>` Tag a background-color, then the full ViewPort filled with that Color?
@@ -23,7 +22,7 @@
 
 ### MIT License
 
-Copyright (c) 2021 Armand98 <happiness2020vip@foxmail.com>
+Copyright (c) 2021 Armand98 `<happiness2020vip@foxmail.com>`
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
