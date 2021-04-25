@@ -7,18 +7,30 @@
 
 ### HTML/CSS
 
-1、why box-attribute Padding expanded my Box-Container ?  
+#### 1、why box-attribute Padding expanded my Box-Container ?  
 e.g.: you set the box-sizing to content-box, but Padding is only squzzing the box-content.   
 `{Padding: 20px; width:100px; height: 100px;}`   
     this is a content-box, with fixed W and H ,but You set Paddings, it will squzze the content,content Is Fixed, it will not yield, so then, it will expand padding Width with 20px on its Four side, then you got visible box with 140x140px, but content is still 100x100, the expanded part is Padding.  
     set the box-sizing Attr to `border-box`,because this allows content to be squzzed by Padding, with changable content. So if you set Padding again, it's visible box still 100x100px
     
 
-2、why give `<Body>` Tag a background-color, then the full ViewPort filled with that Color?  
+#### 2、why give `<Body>` Tag a background-color, then the full ViewPort filled with that Color?  
 solution : because the Attributes in Body, is the state of whole HTML page.   
 even if you give the Body height 20px...
 
-
+#### 3、why do others write Code like bellow ?
+```css
+*,
+*::before,
+*::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+```
+explained:  
+3 selectors are related to All html tags, All html tags content::before, All html tags content::after,  
+purpose for doing that: margin 0 padding 0, set Boxes are Standarded; box-sizing, set Boxes not expanded by paddings.
 
 ### MIT License
 
