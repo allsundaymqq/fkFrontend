@@ -54,6 +54,15 @@ purpose for doing that: margin 0 padding 0, set Boxes are Standarded; box-sizing
   ```
   set T/L/R/B to 0, it will expand 100% W and H related to Parent position element.
 
+#### 5、Reasons for inline Element to inline-block
+first: inline El margin-top/bottom doesn't work, even if it had values  
+second: inline El padding doesn't affect the line-height of text  
+
+In Project, we use inline-block to get inline-EL included by its parent block, otherwise padding will somehow expanded out of the parent BOX.  
+And, we also wanna inline-El have margin-top/bottom. 
+Last, we often use padding to set inline-El W and H...
+
+
 ### MIT License
 
 Copyright (c) 2021 Armand98  &lt;happiness2020vip@foxmail.com&gt; 
