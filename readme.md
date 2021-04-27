@@ -32,6 +32,28 @@ explained:
 3 selectors are related to All html tags, All html tags content::before, All html tags content::after,  
 purpose for doing that: margin 0 padding 0, set Boxes are Standarded; box-sizing, set Boxes not expanded by paddings.
 
+#### 4、CSS Position trick,Using position to expand a box  
+  sometimes, you have to position a div like this:  
+  ```html
+<div class="particles">
+    <canvas></canvas>
+</div>
+    ```
+  so, the canvas W and H is 100% of the parent div,You wanna .particles to reasonably expand,not to exceed the Nearest Parent with Position value.  
+  just write CSS like this :
+  ```css
+  .particles{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow:hidden;
+    z-index:10;
+  }
+  ```
+  set T/L/R/B to 0, it will expand 100% W and H related to Parent position element.
+
 ### MIT License
 
 Copyright (c) 2021 Armand98  &lt;happiness2020vip@foxmail.com&gt; 
