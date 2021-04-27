@@ -34,11 +34,11 @@ purpose for doing that: margin 0 padding 0, set Boxes are Standarded; box-sizing
 
 #### 4、CSS Position trick,Using position to expand a box  
   sometimes, you have to position a div like this:  
-  ```html
+  ```css
 <div class="particles">
     <canvas></canvas>
 </div>
-    ```
+  ```
   so, the canvas W and H is 100% of the parent div,You wanna .particles to reasonably expand,not to exceed the Nearest Parent with Position value.  
   just write CSS like this :
   ```css
