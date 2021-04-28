@@ -73,6 +73,25 @@ Instead, we Using Paddings to set Height of any box...
     }
 ```
 
+#### 7、Img's W and H get stretched with the viewport width only
+Suppose You wanna make you Web pages scalable...  
+like, adjust the ViewPort Width, the Img's W and H can be responsive  
+just write css like this:  
+```css
+//In global.css
+    img{
+        width:100%;
+    }
+    
+```
+If you're using img as Background, then write backgound-size like this:
+```css
+    .somediv{
+        background: url('') no-repeat;
+        background-size:100%;
+    }
+```
+
 ### MIT License
 
 Copyright (c) 2021 Armand98  &lt;happiness2020vip@foxmail.com&gt; 
