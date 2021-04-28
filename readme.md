@@ -62,6 +62,16 @@ In Project, we use inline-block to get inline-EL included by its parent block, o
 And, we also wanna inline-El have margin-top/bottom. 
 Last, we often use padding to set inline-El W and H...
 
+#### 6、The secret of Padding
+In any given project, we don't write height value to any sigle DIV or Tags.  
+Instead, we Using Paddings to set Height of any box...  
+!!!Don't set Height value to any boxes...  
+```css
+    .footer{
+        padding: 1em;
+        //em is related to parent El's font-size...
+    }
+```
 
 ### MIT License
 
