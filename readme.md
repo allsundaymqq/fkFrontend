@@ -92,6 +92,62 @@ If you're using img as Background, then write backgound-size like this:
         background-size:100%;
     }
 ```
+#### 8、CSS animation BUG
+  CASE：You want to make animation effect through 'click' or 'keydown' event, and the callback function is gonna add a new class to a DOM element. Then, you have to add 'transitionend' event to every single Element, using its callback function to remove class of the Element.  
+  In short, Using JS to add/remove class from a Element. But it will trigger BUG...  
+  ```js
+  function addAnimate(e){
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    key.classList.add('active');
+  }
+  function removeTransition(e){
+    if(e.propertyName !== 'transiform'){ return; }
+    this.classList.remove('active');
+  }
+  const keys = document.querySelectorAll(".key");
+  keys.forEach( key => {
+    key.addEventListener('transitionend', removeTransition)
+  });
+  window.addEventListener('keydown', addAnimate);
+  ```
+  This is typical, but have bugs, like, when you press key very frequent, and the 'acitve' class won't remove, so it's gonna have 'active' class all way long...  
+  Solutions: Using @keyFrames and clone 'active' DOM node, then replace current node with the clone one, so that to trigger the Animation process.  
+  ```js
+  function palySound(e){ 
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); 
+         
+        key.style.animationPlayState = 'running';
+        let elm = key;
+        let newone = elm.cloneNode(true);
+        elm.parentNode.replaceChild(newone, elm); 
+        return;
+    } 
+    window.addEventListener('keydown', palySound); 
+  ```
+  ```css
+  @keyframes highlight {
+    0% { 
+         
+    }
+    50% {
+        border: .3rem solid orange;
+        box-shadow: 0 0 1remorange;
+        transform: scale(1.1);
+    }
+    100% {
+        border: .2rem solid #fff;
+         
+    }
+  }
+  
+.key{  
+    animation-name: highlight;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+ }
+  ```
+
 <a name="liscense"></a>
 ### MIT License
 
