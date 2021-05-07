@@ -5,9 +5,9 @@
 - [HTML/CSS](#HTML-CSS)
 - [Liscense](#liscense)
 
-
-### HTML/CSS
 <a name="HTML-CSS"></a>
+### HTML/CSS
+
 #### 1、why box-attribute Padding expanded my Box-Container ?  
 e.g.: you set the box-sizing to content-box, but Padding is only squzzing the box-content.   
 `{Padding: 20px; width:100px; height: 100px;}`   
@@ -92,9 +92,9 @@ If you're using img as Background, then write backgound-size like this:
         background-size:100%;
     }
 ```
-
-### MIT License
 <a name="liscense"></a>
+### MIT License
+
 Copyright (c) 2021 Armand98  &lt;happiness2020vip@foxmail.com&gt; 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
