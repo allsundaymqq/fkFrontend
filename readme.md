@@ -3,22 +3,35 @@
 
 ## tables of Content
 - [HTML/CSS](#HTML-CSS)
+    -[1、why box-attribute Padding expanded my Box-Container ?](#box-attr)
+    -[2、why give `<Body>` Tag a background-color, then the full ViewPort filled with that Color?](#static2)
+    -[3、why do others write Code like bellow ?](#static3)
+    -[4、CSS Position trick,Using position to expand a box ](#static4)
+    -[5、Reasons for inline Element to inline-block](#static5)
+    -[6、The secret of Padding ](#static6)
+    -[7、Img's W and H get stretched with the viewport width only](#static7)
+    -[8、CSS animation BUG](#static8)
+    
+  
+    
 - [Liscense](#liscense)
 
 <a name="HTML-CSS"></a>
 ### HTML/CSS
 
+<a name="box-attr"></a>
 #### 1、why box-attribute Padding expanded my Box-Container ?  
 e.g.: you set the box-sizing to content-box, but Padding is only squzzing the box-content.   
 `{Padding: 20px; width:100px; height: 100px;}`   
     this is a content-box, with fixed W and H ,but You set Paddings, it will squzze the content,content Is Fixed, it will not yield, so then, it will expand padding Width with 20px on its Four side, then you got visible box with 140x140px, but content is still 100x100, the expanded part is Padding.  
     set the box-sizing Attr to `border-box`,because this allows content to be squzzed by Padding, with changable content. So if you set Padding again, it's visible box still 100x100px
     
-
+<a name="static2"></a>
 #### 2、why give `<Body>` Tag a background-color, then the full ViewPort filled with that Color?  
 solution : because the Attributes in Body, is the state of whole HTML page.   
 even if you give the Body height 20px...
 
+<a name="static3"></a>
 #### 3、why do others write Code like bellow ?
 ```css
 *,
@@ -33,6 +46,7 @@ explained:
 3 selectors are related to All html tags, All html tags content::before, All html tags content::after,  
 purpose for doing that: margin 0 padding 0, set Boxes are Standarded; box-sizing, set Boxes not expanded by paddings.
 
+<a name="static4"></a>
 #### 4、CSS Position trick,Using position to expand a box  
   sometimes, you have to position a div like this:  
   ```css
@@ -55,6 +69,7 @@ purpose for doing that: margin 0 padding 0, set Boxes are Standarded; box-sizing
   ```
   set T/L/R/B to 0, it will expand 100% W and H related to Parent position element.
 
+<a name="static5"></a>
 #### 5、Reasons for inline Element to inline-block
 first: inline El margin-top/bottom doesn't work, even if it had values  
 second: inline El padding doesn't affect the line-height of text  
@@ -63,6 +78,7 @@ In Project, we use inline-block to get inline-EL included by its parent block, o
 And, we also wanna inline-El have margin-top/bottom. 
 Last, we often use padding to set inline-El W and H...
 
+<a name="static6"></a>
 #### 6、The secret of Padding
 In any given project, we don't write height value to any sigle DIV or Tags.  
 Instead, we Using Paddings to set Height of any box...  
@@ -74,6 +90,7 @@ Instead, we Using Paddings to set Height of any box...
     }
 ```
 
+<a name="static7"></a>
 #### 7、Img's W and H get stretched with the viewport width only
 Suppose You wanna make you Web pages scalable...  
 like, adjust the ViewPort Width, the Img's W and H can be responsive  
@@ -92,6 +109,7 @@ If you're using img as Background, then write backgound-size like this:
         background-size:100%;
     }
 ```
+<a name="static8"></a>
 #### 8、CSS animation BUG
   CASE：You want to make animation effect through 'click' or 'keydown' event, and the callback function is gonna add a new class to a DOM element. Then, you have to add 'transitionend' event to every single Element, using its callback function to remove class of the Element.  
   In short, Using JS to add/remove class from a Element. But it will trigger BUG...  
