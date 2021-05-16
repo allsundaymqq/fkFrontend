@@ -174,8 +174,8 @@ case 1: Using flex to fill the whole content of a box
        <div class="progress">
             <div class="filled"></div>
        </div>
-    ```
-    give .progress const value for W&H, Using flex&flex-basis for .filled W&H
+    ```  
+    give .progress const value for W&H, Using flex&flex-basis for .filled W&H  
     ```css
     .progress{
         display:flex;
@@ -187,7 +187,7 @@ case 1: Using flex to fill the whole content of a box
         flex:0;
         flex-basis:50%;
     }
-    ```
+    ```  
     In short,Using flex to substitude height:100%;
      
 
