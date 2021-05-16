@@ -167,16 +167,17 @@ If you're using img as Background, then write backgound-size like this:
  }
   ```
 <a name="static9"></a>
-9、`display:flex` Cases explained
-case 1: Using flex to fill the whole content of a box  
-    commonly used structure of Progress
-    ```html/css
+9、`display:flex` Cases explained  
+case 1: Using flex to fill the whole content of a box    
+commonly used structure of Progress  
+```javascript
        <div class="progress">
             <div class="filled"></div>
        </div>
-    ```  
-    give .progress const value for W&H, Using flex&flex-basis for .filled W&H  
-    ```css
+  
+    give .progress const value for W&H, Using flex&flex-basis for .filled W&H    
+    
+     
     .progress{
         display:flex;
         width:50%;
