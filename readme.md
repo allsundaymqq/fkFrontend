@@ -11,6 +11,7 @@
     - [6、The secret of Padding ](#static6)
     - [7、Img's W and H get stretched with the viewport width only](#static7)
     - [8、CSS animation BUG](#static8)
+    - [9、`display:flex` Cases explained](#static9)
     
   
     
@@ -165,6 +166,30 @@ If you're using img as Background, then write backgound-size like this:
     animation-play-state: paused;
  }
   ```
+<a name="static9"></a>
+9、`display:flex` Cases explained
+case 1: Using flex to fill the whole content of a box  
+    commonly used structure of Progress
+    ```html/css
+       <div class="progress">
+            <div class="filled"></div>
+       </div>
+    ```
+    give .progress const value for W&H, Using flex&flex-basis for .filled W&H
+    ```css
+    .progress{
+        display:flex;
+        width:50%;
+        height:15px;
+    }
+    .fiiled{
+    //this will fill 50% width and 100% height of the progress box
+        flex:0;
+        flex-basis:50%;
+    }
+    ```
+    In short,Using flex to substitude height:100%;
+     
 
 <a name="liscense"></a>
 ### MIT License
